@@ -1,10 +1,10 @@
-package com.example.pokemonsdlike.objects;
+package com.example.pokemonsdlike.Passive;
 
 import com.example.pokemonsdlike.pokemons.Pokemon;
 
 import java.util.ArrayList;
 
-public class Object implements IObject{
+public class Passive implements IPassive {
     private String name;
     private ArrayList<Boolean> triggers;
 
