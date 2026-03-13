@@ -1,20 +1,26 @@
 package com.example.pokemonsdlike.pokemons;
 
 import com.example.pokemonsdlike.moves.Move;
+import com.example.pokemonsdlike.passive.Passive;
 import com.example.pokemonsdlike.types.Type;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Pokemon implements IPokemon{
     private String name = "";
     private ArrayList<Type> types = new ArrayList<Type>();
     private ArrayList<Move> moveSet = new ArrayList<Move>();
     private ArrayList<Move> movePool = new ArrayList<Move>();
-    private HashMap<String, Stat> stats = new HashMap<String, Stat>();
-    private ArrayList<Status> statuses = new ArrayList<Status>();
-    private Ability ability;
+    private ArrayList<Passive> statuses = new ArrayList<Passive>();
+    private Passive ability;
     private Object object;
+
+    private Stat hp;
+    private Stat attack;
+    private Stat specialAttack;
+    private Stat defense;
+    private Stat specialDefense;
+    private Stat speed;
 
     public Pokemon(String name, ArrayList<Type> types,
                    ArrayList<Move> movePool, int hp,
@@ -23,12 +29,12 @@ public class Pokemon implements IPokemon{
                    int speed){
         this.name = name;
 
-        this.stats.put("hp", new Stat(hp));
-        this.stats.put("attack", new Stat(attack));
-        this.stats.put("specialAttack", new Stat(specialAttack));
-        this.stats.put("defense", new Stat(defense));
-        this.stats.put("specialDefense", new Stat(specialDefense));
-        this.stats.put("speed", new Stat(speed));
+        this.hp = new Stat(hp);
+        this.attack = new Stat(attack);
+        this.specialAttack = new Stat(specialAttack);
+        this.defense = new Stat(defense);
+        this.specialDefense = new Stat(specialDefense);
+        this.speed = new Stat(speed);
 
         this.types = types;
     }
@@ -49,20 +55,44 @@ public class Pokemon implements IPokemon{
         return movePool;
     }
 
-    public ArrayList<Status> getStatuses() {
+    public ArrayList<Passive> getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(ArrayList<Status> statuses) {
+    public void setStatuses(ArrayList<Passive> statuses) {
         this.statuses = statuses;
     }
 
-    public Ability getAbility() {
+    public Passive getAbility() {
         return ability;
     }
 
     public Object getObject() {
         return object;
+    }
+
+    public Stat getHp() {
+        return hp;
+    }
+
+    public Stat getAttack() {
+        return attack;
+    }
+
+    public Stat getSpecialAttack() {
+        return specialAttack;
+    }
+
+    public Stat getDefense() {
+        return defense;
+    }
+
+    public Stat getSpecialDefense() {
+        return specialDefense;
+    }
+
+    public Stat getSpeed() {
+        return speed;
     }
 
     public void setObject(Object object) {
