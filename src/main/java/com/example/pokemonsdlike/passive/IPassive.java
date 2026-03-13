@@ -1,4 +1,4 @@
-package com.example.pokemonsdlike.Passive;
+package com.example.pokemonsdlike.passive;
 
 import com.example.pokemonsdlike.pokemons.Pokemon;
 
