@@ -2,11 +2,22 @@ package com.example.pokemonsdlike.passive;
 
 import com.example.pokemonsdlike.pokemons.Pokemon;
 
-import java.util.ArrayList;
-
-public class Passive implements IPassive {
+public abstract class Passive implements IPassive {
     private String name;
-    private ArrayList<Boolean> triggers;
+    private String description;
+
+    public Passive(String name, String description){
+        this.name = name;
+        this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 
     @Override
     public void mainEffect(Pokemon pokemon) {
