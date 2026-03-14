@@ -2,21 +2,18 @@ package com.example.pokemonsdlike.passive;
 
 import com.example.pokemonsdlike.pokemons.Pokemon;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Passive implements IPassive {
     private String name;
     private String description;
-    private HashMap<String, Boolean> isActive = new HashMap<String, Boolean>();
+    private Map<String, Boolean> isActive = new HashMap<>();
 
-    public Passive(String name, String description, ArrayList<String> isActive){
+    public Passive(String name, String description, Map<String, Boolean> isActive) {
         this.name = name;
         this.description = description;
-
-        for (String trigger: this.isActive.keySet()){
-            this.isActive[trigger] = true;
-        }
+        this.isActive.putAll(isActive);
     }
 
     public String getName() {

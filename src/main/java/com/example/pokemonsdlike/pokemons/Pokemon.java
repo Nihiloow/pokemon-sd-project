@@ -99,22 +99,22 @@ public class Pokemon implements IPokemon{
         this.object = object;
     }
 
-    public void addMove(Move move){
-
-    }
-
-    public void removeMove(Move move){
-
+    public void switchMove(Move move, int spot) {
+        if (spot >= 0 && spot < this.moveSet.size()) {
+            if (move == null) {
+                this.moveSet.set(spot, null); // Directly set the element at the specified spot to null
+            } else {
+                this.moveSet.set(spot, move);
+            }
+        } else {
+            // Handle invalid spot - could throw exception or do nothing
+            System.out.println("Invalid spot for switching move");
+        }
     }
 
     @Override
     public ArrayList<Move> getMoves(){
-        return new ArrayList<Move>();
-    }
-
-    @Override
-    public void setMoves(){
-
+        return this.moveSet;
     }
 
     @Override
@@ -123,7 +123,7 @@ public class Pokemon implements IPokemon{
     }
 
     @Override
-    public void takeDamages(Move move){
+    public void takeDamages(int amount, String damageType, Type type){
 
     }
 }
