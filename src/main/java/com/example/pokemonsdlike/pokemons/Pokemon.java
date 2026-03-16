@@ -118,12 +118,18 @@ public class Pokemon implements IPokemon{
     }
 
     @Override
-    public void attack(Move move){
-
+    public void attack(Move move) {
+        if (move != null) {
+            move.mainEffect(this);
+            move.sideEffect(this);
+        }
     }
 
     @Override
-    public void takeDamages(int amount, String damageType, Type type){
-
+    public void takeDamages(int amount, String damageType, Type type) {
+        int effectiveDamage = amount;
+        // TODO: Implement damage calculation based on type effectiveness
+        System.out.println("Effective Damage: " + effectiveDamage);
+        this.hp.setStat(this.hp.getStat() - effectiveDamage);
     }
 }

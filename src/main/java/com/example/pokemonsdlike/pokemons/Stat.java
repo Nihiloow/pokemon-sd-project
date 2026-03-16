@@ -20,6 +20,10 @@ public class Stat {
         this.coef = coef;
     }
 
+    public void setStat(int stat) {
+        this.stat = stat;
+    }
+
     public int getRealStat(){
         return (int)(this.stat * this.coef);
     }

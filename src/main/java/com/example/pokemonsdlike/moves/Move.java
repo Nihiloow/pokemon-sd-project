@@ -28,6 +28,10 @@ public abstract class Move implements Imove {
         return type;
     }
 
+    public int getDamages() {
+        return damages;
+    }
+
     @Override
     public void mainEffect(Pokemon pokemon){
 

@@ -5,15 +5,15 @@ import com.example.pokemonsdlike.pokemons.Pokemon;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Passive implements IPassive {
+public class Passive implements IPassive {
     private String name;
     private String description;
     private Map<String, Boolean> isActive = new HashMap<>();
 
-    public Passive(String name, String description, Map<String, Boolean> isActive) {
+    public Passive(String name, String description) {
         this.name = name;
         this.description = description;
-        this.isActive.putAll(isActive);
+        //this.isActive.putAll(isActive);
     }
 
     public String getName() {
